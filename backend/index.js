@@ -1,7 +1,6 @@
 //import express
 const express=require('express');
 const userRouter=require('./routers/userRouter');
-const productRouter=require('./routers/productRouter');
 const cors = require('cors');
 //initialise express
 const app=express();
@@ -15,7 +14,7 @@ app.use(cors({
 }));
 
 app.use('/user',userRouter);
-app.use('/product',productRouter);
+
 
 //routes
 app.get('/',(req,res)=>{
