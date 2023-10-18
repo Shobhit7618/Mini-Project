@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import items from './dummyData';
 import { useParams } from 'react-router-dom';
+import useCartContext from '../CartContext';
+import Swal from 'sweetalert2';
 
 const Itemslist = () => {
+
+    const{addItemToCart}= useCartContext();
 
     const {shopname} = useParams();
     const [shopData, setShopData] = useState(
@@ -10,6 +14,20 @@ const Itemslist = () => {
     );
 
     console.log(shopData);
+    // if(res.status === 200){
+    //     Swal.fire({
+    //       icon : 'success',
+    //       title : 'Item added to Cart',
+    //       text : 'Go to Cart'
+    //     });
+    //   }else{
+    //     Swal.fire({
+    //       icon : 'error',
+    //       title : 'Error',
+    //       text : 'Something went wrong!!'
+    //     })
+    //   }
+
     return (
 
 
@@ -30,6 +48,7 @@ const Itemslist = () => {
                                         <div className='card-body'>
                                             <h4>{product.name}</h4>
                                             <h4> ₹ {product.price}</h4>
+                                            <button onClick={()=>{addItemToCart(product)}} className='btn btn-primary'>Add to Cart</button>
                                         </div>
                                     </div>
                                 </div>

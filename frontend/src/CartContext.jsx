@@ -1,4 +1,5 @@
 import {createContext, useContext, useState} from "react";
+import toast from "react-hot-toast";
 const CartContext = createContext();
 
 export const CartProvider = ({children})=>{
@@ -6,6 +7,7 @@ export const CartProvider = ({children})=>{
     const [cartItems, setCartItems]= useState([]);
     const addItemToCart = (item)=>{
         setCartItems([...cartItems,item]);
+        toast.success('Item added');
     };
 
     const removeItemFromCart = (index)=>{

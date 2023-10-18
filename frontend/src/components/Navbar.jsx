@@ -26,7 +26,13 @@
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              
+
+          <li className="nav-item">
+              <NavLink className="nav-link" to="/home">
+                Home
+              </NavLink>
+            </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/login">
                 Login
@@ -42,15 +48,15 @@
               <NavLink className="nav-link" to="/shopslist">
                 Shops List
               </NavLink>
-            </li>  
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/itemslist">
-                Items List
-              </NavLink>
-            </li>  
+            </li>    
             <li className="nav-item">
               <NavLink className="nav-link" to="/cartpage">
                 Cart Page
+              </NavLink>
+            </li>  
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/vieworders">
+                View Orders
               </NavLink>
             </li>  
             
